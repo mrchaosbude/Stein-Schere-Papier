@@ -4,7 +4,7 @@ import pickle
 x = "None!" # normales spiel oder spiel extra
 highscore = {"win": 0, "lose": 0, "draw": 0, "geWin": 0, "geLose": 0, "geDraw": 0}
 
-#highscore wird geladen
+#highscore wird geladen!
 def loadhighscore():
     global highscore
     try:
@@ -16,7 +16,7 @@ def loadhighscore():
 
 #Stein Schere Papier random generator
 def kiRandom(normaloderextra):
-    ai = ("Stein", "Schere", "Papier", "Echse", "Spock");
+    ai = ("Stein", "Schere", "Papier", "Echse", "Spock")
     auswahl = ai[random.randint(0,normaloderextra)]
     return (auswahl)
 
@@ -187,7 +187,6 @@ def comparison (player1 , player2, chois):
 
 #das spiel wiederholen
 def repeat():
-
     ans = True
     while ans:
         print("Möchtest du noch eine Runde spielen? (J/N)")
