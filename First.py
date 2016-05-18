@@ -203,7 +203,7 @@ def repeat():
 
 # Highscore!
 def highscorem():
-            # print("\033c");
+            print("\033c");
             #os.system('cls||clear')
             global highscore
             print("""
