@@ -201,7 +201,7 @@ def repeat():
         else:
             print("\n Die Eingabe war nicht die Richtige!")
 
-# Highscore
+# Highscore!
 def highscorem():
             # print("\033c");
             #os.system('cls||clear')
