@@ -45,7 +45,7 @@ def menue():
         elif ans == "2":
             game_engine_extra()
         elif ans == "3":
-            print("\n NOCH nicht!", highscore)
+            highscorem()
         elif ans == "4":
             print("\n NOCH NICHT!!!")
         elif ans == "0":
@@ -200,6 +200,63 @@ def repeat():
             menue()
         else:
             print("\n Die Eingabe war nicht die Richtige!")
+
+# Highscore
+def highscorem():
+            # print("\033c");
+            #os.system('cls||clear')
+            global highscore
+            print("""
+              _  _                              _                ___          _         _
+             | \| |  ___   _ _   _ __    __ _  | |  ___   ___   / __|  _ __  (_)  ___  | |
+             | .` | / _ \ | '_| | '  \  / _` | | | / -_) (_-<   \__ \ | '_ \ | | / -_) | |
+             |_|\_| \___/ |_|   |_|_|_| \__,_| |_| \___| /__/   |___/ | .__/ |_| \___| |_|
+                                                                      |_|
+                                                                      """)
+            print("Du hast", highscore["win"], "Gewonnen", highscore["lose"], "mal verloren und", highscore["draw"],
+                  "Unendschieden Gespielt!")
+
+            print("""
+              ___         _                    ___          _         _
+             | __| __ __ | |_   _ _   __ _    / __|  _ __  (_)  ___  | |
+             | _|  \ \ / |  _| | '_| / _` |   \__ \ | '_ \ | | / -_) | |
+             |___| /_\_\  \__| |_|   \__,_|   |___/ | .__/ |_| \___| |_|
+                """)
+            print("Du hast", highscore["geWin"], "Gewonnen", highscore["geLose"], "mal verloren und",
+                  highscore["geDraw"], "Unendschieden Gespielt!")
+
+            ans = True
+            while ans:
+                print("""
+                        1. Normales Spiel highscore Resetten
+                        2. Extra Spiel highscore Resetten
+                        3. Alle Resetten
+                        4. Zurück zum Hauptmenue
+                        """)
+                ans = input("Triff deine Wahl :")
+                if ans == "1":
+                    highscore["win"] = 0
+                    highscore["lose"] = 0
+                    highscore["draw"] = 0
+                    ans = None
+                elif ans == "2":
+                    highscore["geWin"] = 0
+                    highscore["geLose"] = 0
+                    highscore["geDraw"] = 0
+                    ans = None
+                elif ans == "3":
+                    highscore = {"win": 0, "lose": 0, "draw": 0, "geWin": 0, "geLose": 0, "geDraw": 0}
+                    ans = None
+                elif ans == "4":
+                    menue()
+                    ans = None
+                elif ans == "99":
+                    highscore = {"win": 99, "lose": 99, "draw": 99, "geWin": 99, "geLose": 99, "geDraw": 99}
+                    ans = None
+                else:
+                    print("\n Bitte wähle eine Zahl zwischen 1-4")
+            pickle.dump(highscore, open("save.p", "wb"))
+
 
 #der erste aufruf
 menue()
